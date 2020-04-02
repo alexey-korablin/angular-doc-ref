@@ -12,7 +12,7 @@ export class ProductListComponent {
 
   constructor() {}
 
-  share(product) {
+  share(product: any) {
     window.alert(`The ${product.name} has been shared!`);
   }
 
