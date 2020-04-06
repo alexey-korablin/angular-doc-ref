@@ -16,6 +16,7 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MessagesComponent } from './components/messages/messages.component';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,10 +38,10 @@ import { MessagesComponent } from './components/messages/messages.component';
     AppRoutingModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
+      { path: 'products', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
-      { path: 'cart', component: CartComponent },
-      { path: 'shipping', component: ShippingComponent },
+      { path: 'products/cart', component: CartComponent },
+      { path: 'products/shipping', component: ShippingComponent },
     ]),
     FormsModule,
   ],
