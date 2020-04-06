@@ -15,6 +15,7 @@ import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
     ShippingComponent,
     HeroesComponent,
     HeroDetailComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
