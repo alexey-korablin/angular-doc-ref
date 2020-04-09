@@ -1,0 +1,19 @@
+<section class="question-main">
+  <h1>Quiz section</h1>
+  <section *ngFor="let theme of themes">
+    <h2>{{ theme }}</h2>
+    <article class="question-block" *ngFor="let question of questions">
+      <div
+        class="question-container"
+        *ngIf="question.question && question.theme === theme"
+      >
+        <div class="question-block__question_item">
+          <p>{{ question.question }}</p>
+        </div>
+        <div class="question-block__answer_item">
+          <p>{{ question.answer }}</p>
+        </div>
+      </div>
+    </article>
+  </section>
+</section>
