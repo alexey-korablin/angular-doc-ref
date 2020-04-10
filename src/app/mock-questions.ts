@@ -93,6 +93,124 @@ export const questions: Question[] = [
     answer: '[(target)]="expression"; bindon-target="expression"',
     theme: 'Template syntax',
   },
+  {
+    id: 15,
+    question: 'Как привязывается свойство в шаблоне?',
+    answer: `<img [src]="imgaeUrl"> \n
+       <app-hero-details [hero]="currentHero"></app-hero-details> \n
+       <p [ngClass]="{'special': isSpecial}"></p>`,
+    theme: 'Template syntax',
+  },
+  {
+    id: 16,
+    question: 'Как привязывается событие в шаблоне?',
+    answer:
+      '<button (click)="onSave()">Save</button> \n <app-hero (deleteRequest)="deleteHero()"></app-hero> \n <div (myClick)="clicked=$event" clickable>Click me</div>',
+    theme: 'Template syntax',
+  },
+  {
+    id: 17,
+    question: 'Как делается двусторонняя привязка в шаблоне?',
+    answer: '<input [(ngModel)]="name">',
+    theme: 'Template syntax',
+  },
+  {
+    id: 18,
+    question: 'Как привязывается атрибут в шаблоне?',
+    answer: '<button [attr.arial-label]="help">Help</button>',
+    theme: 'Template syntax',
+  },
+  {
+    id: 19,
+    question: 'Как привязывается класс в шаблоне?',
+    answer: '<button [class.special]="isSpecial">Help</button>',
+    theme: 'Template syntax',
+  },
+  {
+    id: 20,
+    question: 'Как привязывается свойство стиля в шаблоне?',
+    answer: '<button [style.color]="isSpecial ? `red` : `green`">Help</button>',
+    theme: 'Template syntax',
+  },
+  {
+    id: 21,
+    question: 'Как передать значение в компонент через привязку в шаблоне?',
+    answer:
+      'Шаблон родительского компонента: <app-child [childItem]="parentItem"> | Дочерний компонент: @input() childItem: string | Свойство parentItem родительского компонента: parentItem = "lamp"',
+    theme: 'Template syntax',
+  },
+  {
+    id: 22,
+    question: 'Можно ли не указывать квадратные скобки в привязке шаблона?',
+    answer:
+      'В общем случае нет. В примере: <app-detail item="parentItem"></app-detail> - в результате в item будет записана строка parentItem, а не значение переменной родительского шаблона',
+    theme: 'Template syntax',
+  },
+  {
+    id: 23,
+    question:
+      'Есть ли принципиальная разница между передачей строк в компонент с использованием квадратных скобок в привязке и без них?',
+    answer:
+      'Да, есть. Без квадратных скобок привязка срабатывает лишь единожды, отразить измененное значение строки в уже привязанном свойстве шаблона компонента не получится.',
+    theme: 'Template syntax',
+  },
+  {
+    id: 24,
+    question: 'Когда стоит предпочетать интерполяцию привязке свойств?',
+    answer:
+      'В случае со строковыми значениями разницы нет. В случае с нестроковыми значениями следует предпочесть property binding',
+    theme: 'Template syntax',
+  },
+  {
+    id: 25,
+    question:
+      'Можно ли передать вредоносный код для его выполнения в интерполяции или передать как свйоство шаблона для выполнения в компоненте?',
+    answer:
+      'Такой код выполнен не будет, а будет представлен строкой как есть. В любом случае перед отображением значения он обрабатывается модулем sanitize',
+    theme: 'Template syntax',
+  },
+  {
+    id: 26,
+    question: 'Как установить/удалить атрибут в шаблоне?',
+    answer:
+      'Для этого нужно записать конструкцию [attr.<attribute_name>]="attribute_value_to_set_or_null_to_remove". Таким образом, если значением атрибута является строка, то атрибут будет установлен. Если же значением атрибута является null - атрибут будет удален с элемента. Пример: <div [attr.aria-label]="actionName"></div>',
+    theme: 'Template syntax',
+  },
+  {
+    id: 27,
+    question: 'Как установить класс в шаблоне?',
+    answer:
+      'Для того, чтобы привязать один класс, может быть использована следующая конструкция: [class.foo]="hasFoo"; при этом значениями hasFoo могут быть boolean, undefined или null.',
+    theme: 'Template syntax',
+  },
+  {
+    id: 28,
+    question: 'Как установить несколько классов в шаблоне?',
+    answer:
+      'Для того, чтобы привязать несколько классов, может быть использована конструкция: [class]="classExpr"; classExpr может быть строкой типа "my-class-1 my-class-2" или объектом, ключи которого строкового типа, а значения - boolean, undefined или null, например { foo: true, bar: false }, или же он может быть массивом строк - ["foo", "bar"]',
+    theme: 'Template syntax',
+  },
+  {
+    id: 29,
+    question: 'Как установить свойство стиля в шаблоне?',
+    answer:
+      'С помощью конструкции [style.width]="width", где width - строка | undefined | null, пример значения: 100px',
+    theme: 'Template syntax',
+  },
+  {
+    id: 30,
+    question: 'Как установить свойство стиля в шаблоне с единицами измерения?',
+    answer:
+      'С помощью конструкции [style.width.px]="width", где width - строка | undefined | null, пример значения: 100',
+    theme: 'Template syntax',
+  },
+  {
+    id: 31,
+    question: 'Как установить установить набор стилей в шаблоне?',
+    answer:
+      'С помощью конструкции [style]="styleExpr", где styleExpr - строка | object | array. Если значение строкового типа, то оно може выглядеть так: "width: 100px; height: 100px". Если значение - объект, то ключ должен быть строкового типа, а значение string | undefined | null, пример: { width: "100px", height: "100px" }. Если значение массив, то он должен быть массивом строк, например: ["width", "100px"] ',
+    theme: 'Template syntax',
+  },
 ];
 
 export const themes: Array<string> = ['Template syntax', 'Another theme'];
