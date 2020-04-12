@@ -211,6 +211,33 @@ export const questions: Question[] = [
       'С помощью конструкции [style]="styleExpr", где styleExpr - строка | object | array. Если значение строкового типа, то оно може выглядеть так: "width: 100px; height: 100px". Если значение - объект, то ключ должен быть строкового типа, а значение string | undefined | null, пример: { width: "100px", height: "100px" }. Если значение массив, то он должен быть массивом строк, например: ["width", "100px"] ',
     theme: 'Template syntax',
   },
+  {
+    id: 32,
+    question: 'Как выполнить привязку события в шаблоне?',
+    answer:
+      '<html_element (<event_name>="component_method()")></html_element>, пример: <button (click)="onSave()">',
+    theme: 'Template syntax',
+  },
+  {
+    id: 33,
+    question: 'Чем может быть представлен $event?',
+    answer: 'Строкой, числом или объектом',
+    theme: 'Template syntax',
+  },
+  {
+    id: 34,
+    question: 'От чего зависит, как будет представлен $event?',
+    answer:
+      'Форму $event объекта определяет елемент на котором вызвано событие. Например нативный DOM элемент определяет $event как DOM event object с такими свойствами как target и target.value',
+    theme: 'Template syntax',
+  },
+  {
+    id: 35,
+    question: 'От чего зависит, как будет представлен $event?',
+    answer:
+      'Форму $event объекта определяет елемент на котором вызвано событие. Например нативный DOM элемент определяет $event как DOM event object с такими свойствами как target и target.value',
+    theme: 'Template syntax',
+  },
 ];
 
 export const themes: Array<string> = ['Template syntax', 'Another theme'];
